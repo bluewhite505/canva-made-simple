@@ -286,6 +286,20 @@ pintrk('page');
  .vcat li{font-size:12.5px}
  .vg-cta{width:100%;font-size:15px;padding:16px 12px;text-align:center}
 }
+
+/* v4: founder story */
+.story{background:var(--cream);border-top:1px solid var(--line)}
+.story-grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center;max-width:960px}
+.story-photo{margin:0}.story-photo picture{display:block;line-height:0}
+.story-photo img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:28px;box-shadow:0 20px 48px #57274b24}
+.story-text h2{margin:8px 0 18px}
+.story-text p{font-size:17px;line-height:1.65;color:#4e414b;margin:0 0 12px}
+.story-text .story-last{font-size:20px;color:var(--pinkdark);margin-top:18px}
+.story-text .story-sign{font-weight:800;color:var(--ink);font-size:17px}
+.story-text .story-contact{font-size:14px;color:var(--muted);margin-top:14px}
+.story-contact a{color:var(--pinkdark);font-weight:800}
+.story-cta{margin-top:10px}
+@media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:24px}.story-photo{max-width:240px;margin:0 auto}.story-text p{font-size:16px}.story-text .story-last{font-size:18px}.story-cta{width:100%;font-size:15px;text-align:center}}
 </style>
 </head>
 <body>
@@ -416,6 +430,30 @@ pintrk('page');
     </div>
   </div>
 </section>
+<section class="section story" id="story" aria-labelledby="story-title">
+  <div class="wrap story-grid">
+    <figure class="story-photo">
+      <picture>
+        <source srcset="assets/lila.webp" type="image/webp">
+        <img src="assets/lila.jpg" alt="Lila Vey, creator of the Digital Product Starter Bundle" width="480" height="480" loading="lazy" decoding="async">
+      </picture>
+    </figure>
+    <div class="story-text">
+      <span class="eyebrow">WHO MADE THIS</span>
+      <h2 id="story-title">I Was Tired of Feeling Stuck</h2>
+      <p>I reached a point where I was completely burned out.</p>
+      <p>I was giving so much of myself to everything else that I had almost nothing left for me.</p>
+      <p>I knew I wanted something different. I just didn't know where to start.</p>
+      <p>That's how I found Canva and started exploring digital products.</p>
+      <p>I realized I didn't have to be an expert or create everything from scratch.</p>
+      <p>And that's why I created this bundle — to make the beginning a little easier for someone who feels the way I did.</p>
+      <p class="story-last"><strong>Sometimes, all you need is a place to start.</strong></p>
+      <p class="story-sign">— Lila</p>
+      <p class="story-contact">Questions? <a href="mailto:fociva.tech@gmail.com">Email me</a>. I read every message.</p>
+      <a class="cta story-cta" href="#checkout">See the $19 Starter Bundle →</a>
+    </div>
+  </div>
+</section>
 <section class="section price-section" id="checkout">
   <div class="wrap">
     <div class="center">
@@ -472,14 +510,6 @@ pintrk('page');
     <details><summary>When will I receive my files?</summary><p>After successful payment, the checkout redirects you to the secure download page. Once payment is verified, you can access the file or files included in your purchase.</p></details>
     <details><summary>Can I request a refund?</summary><p>Because these are instant digital downloads, all sales are final. If a file won't open or a link is broken, email me and I'll fix it fast. Full details are in the <a href="terms.html">Terms &amp; Conditions</a>.</p></details>
     <details><summary>Does this include personal coaching?</summary><p>No. This is self-paced digital training with an optional editable-template library. It does not include personal coaching or ongoing one-on-one support.</p></details>
-  </div>
-</section>
-<section class="maker" aria-labelledby="maker-title">
-  <div class="wrap maker-card">
-    <!-- PHOTO SLOT: a small, real photo of Lila can go here later, e.g.
-         <img src="assets/lila.webp" alt="Lila Vey" width="96" height="96" style="border-radius:50%;margin:0 auto 12px;display:block"> -->
-    <span class="eyebrow" id="maker-title">WHO MADE THIS</span>
-    <p>Made by Lila Vey of pinprofitgirl. Questions? <a href="mailto:fociva.tech@gmail.com">Email me</a>. I read every message.</p>
   </div>
 </section>
 </main><footer class="footer"><div class="wrap"><p>© <span id="year">2026</span> pinprofitgirl · Educational digital products · Results depend on your niche, offer, effort and execution.</p><nav aria-label="Legal policies"><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a><span aria-hidden="true"> · </span><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a><span aria-hidden="true"> · </span><a href="#checkout">Choose your package</a><span aria-hidden="true"> · </span><a href="mailto:fociva.tech@gmail.com">Contact</a></nav></div></footer>
