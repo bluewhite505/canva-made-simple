@@ -174,6 +174,15 @@
 .warn[hidden]{display:none!important}
 @media(max-width:820px){.vault-spotlight{padding:64px 0}.vault-spotlight-grid{grid-template-columns:1fr;max-width:630px}.vault-showcase{max-width:620px;margin:auto}.vault-spotlight h2{font-size:41px}.vault-big-number{font-size:80px}}
 @media(max-width:520px){.vault-spotlight{padding:52px 0}.vault-spotlight-grid{width:calc(100% - 30px);gap:28px}.vault-spotlight h2{font-size:36px}.vault-big-number{font-size:66px}.vault-lead{font-size:16px}.vault-spotlight .vault-cta{width:100%;padding:16px 11px;text-align:center;font-size:14px}.vault-product-list li{font-size:12px}}
+
+/* 2026 final conversion pass: product-led hero, accessible choices, high-contrast vault */
+.hero h1{font-size:clamp(40px,4.8vw,65px);max-width:710px}
+.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+.vault-spotlight .vault-product-list li{padding:10px 14px;font-size:14px}
+#buy{text-decoration:none;display:flex}
+#buy:focus-visible{outline:3px solid #b92962;outline-offset:4px}
+.checkout-legal a{color:#8d2d59}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(37px,9vw,49px)}}
 </style>
 </head>
 <body>
@@ -182,15 +191,15 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">READY-MADE DIGITAL PRODUCTS + SIMPLE CANVA TRAINING</span>
-      <h1>Want to sell digital products? <em>Skip starting from scratch.</em></h1>
-      <p class="lead">Get a beginner-friendly Canva course plus ready-made digital product designs to customize. Learn the basics, make the designs your own, and prepare products for your shop faster — all in the $19 bundle.</p>
+      <span class="eyebrow">YOUR DIGITAL PRODUCT STARTER BUNDLE · $19</span>
+      <h1>Learn Canva + get <em>ready-made digital products</em> for just $19.</h1>
+      <p class="lead">Skip weeks of designing from scratch. Learn the Canva basics and customize ready-made planners, journals, trackers and more. Start preparing digital products for your own shop, faster.</p>
       <ul class="ticks">
         <li>Learn essential Canva skills in about 25 minutes</li>
         <li>Customize ready-made planners, journals and trackers</li>
         <li>Get product designs built from 7,500 editable pages</li>
       </ul>
-      <a class="cta" href="#checkout">Get the $19 Ready-Made Bundle →</a>
+      <a class="cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get My $19 Starter Bundle →</a>
       <div class="fine">One-time payment · $7 course-only option also available</div>
     </div>
     <figure class="authentic-mockup bundle-original">
@@ -206,19 +215,19 @@
       <span class="eyebrow">THE READY-MADE DIGITAL PRODUCT VAULT</span>
       <h2 id="gallery-title"><span class="vault-big-number">7,500</span> editable Canva pages. <em>So much less to create from zero.</em></h2>
       <p class="vault-lead">Instead of facing a blank canvas, start with ready-made product designs for planners, journals, trackers and other popular niches. Choose one, customize it and prepare it for your shop.</p>
-      <p class="vault-proven">Examples listed in the included catalogue:</p>
+      <p class="vault-proven">ACTUAL PRODUCTS NAMED IN THE INCLUDED CATALOGUE</p>
       <ul class="vault-product-list">
-        <li>Garden Planner</li><li>Fitness Planner</li><li>Recipe Cards Bundle</li>
-        <li>Travel Planner</li><li>Teacher Planner</li><li>Household Planner</li>
+        <li>Self Care Planner</li><li>Etsy Shop Planner</li><li>Budget Planner</li>
+        <li>Fitness Planner</li><li>Social Media Post Planner</li><li>Garden Planner</li>
       </ul>
-      <div class="vault-clarity">7,500 refers to editable pages across ready-made designs — not 7,500 separate products. Review the MRR/PLR terms and Canva asset permissions before selling.</div>
-      <a class="cta vault-cta" href="#checkout">Get the Course + Product Vault — $19 →</a>
+      <div class="vault-clarity">7,500 refers to editable pages across ready-made designs — not 7,500 separate products. The vault catalogue includes a Full MRR &amp; PLR license for its templates (personal use, lead magnets, giveaways and rebranding/resale). Follow the included license and any applicable Canva/third-party asset rules.</div>
+      <a class="cta vault-cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get the Course + Product Vault — $19 →</a>
     </div>
     <figure class="vault-showcase">
       <a href="assets/vault-square.png" target="_blank" rel="noopener" aria-label="See the full Ready-Made Product Vault image">
         <img loading="lazy" src="assets/vault-square.png" width="1080" height="1080" alt="Your original Ready-Made Product Vault image showing an editable Canva catalogue and example product categories">
       </a>
-      <figcaption>The product vault and its clickable catalogue — your original image.</figcaption>
+      <figcaption>Your original product vault image · See the named products listed in the included PDF catalogue.</figcaption>
     </figure>
   </div>
 </section>
@@ -322,10 +331,9 @@
         <span><strong style="font-size:15px">Total today</strong><br><small style="color:var(--muted)">One-time purchase · No subscription</small></span>
         <strong id="total">$19</strong>
       </div>
-      <button type="button" class="cta" id="buy" disabled>Get the Ready-Made Bundle — $19 →</button>
+      <a class="cta bundle-buy" id="buy" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get the Ready-Made Bundle — $19 →</a>
       <div class="smallprint" id="selection-explainer">Your selection includes Canva training and ready-made digital product designs.</div>
-      <div class="warn" id="setup-warning" role="status" aria-live="polite" tabindex="-1" hidden></div>
-      <div class="checkout-legal">All sales are final for digital products, except where a refund is required by applicable law.<br>By purchasing, you agree to our <a href="https://bluewhite505.github.io/lila-vey/terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and acknowledge our <a href="https://bluewhite505.github.io/lila-vey/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</div>
+      <div class="checkout-legal">All digital-product sales are final, except where applicable law gives you a right to a refund or other remedy.<br>By purchasing, you agree to our <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and acknowledge our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</div>
     </div>
   </div>
 </section>
@@ -334,86 +342,53 @@
     <div class="center"><span class="eyebrow">COMMON QUESTIONS</span><h2>Everything you need to know</h2></div>
     <details><summary>I'm totally new to Canva. Is this for me?</summary><p>Yes. The short course is focused on essential tools and beginner editing skills. You can pause and replay the training as you work.</p></details>
     <details><summary>Do I have to buy the $19 bundle?</summary><p>No. The Canva Made Simple course is available by itself for $7. The $19 option simply adds the Ready-Made Digital Product Vault for $12 more.</p></details>
-    <details><summary>What exactly is included in the vault?</summary><p>The vault contains ready-made planner, journal, tracker and other product designs totaling 7,500 editable pages. They are product designs to customize, not 7,500 individual finished products. Access is through a PDF directory of Canva links.</p></details>
+    <details><summary>What exactly is included in the vault?</summary><p>The vault contains ready-made planner, journal, tracker and other product designs totaling 7,500 editable pages. This is a catalogue of multiple ready-made products and design resources containing 7,500 editable pages, not 7,500 different individual products. Access is through a PDF directory of Canva links.</p></details>
     <details><summary>Do I need Canva Pro?</summary><p>You can learn core Canva tools with a free account. Individual templates or elements may require Pro access or paid licenses. Check each design before using or exporting it.</p></details>
-    <details><summary>Can I sell items made using these templates?</summary><p>The vault documentation describes MRR/PLR permissions, but the rights can differ by resource. Review each applicable license and any third-party Canva asset restrictions before distributing or selling finished products. Buying the bundle does not by itself guarantee a right to resell everything in it.</p></details>
+    <details><summary>Can I sell items made using these templates?</summary><p>The final page of the included vault catalogue grants Full MRR &amp; PLR rights for its Canva templates, including personal use, lead magnets, free distribution, rebranding and resale. These permissions do not override Canva or third-party asset licenses. Check those requirements for your finished products.</p></details>
     <details><summary>When will I receive my files?</summary><p>After successful payment, the checkout redirects you to the secure download page. Once payment is verified, you can access the file or files included in your purchase.</p></details>
-    <details><summary>Can I request a refund?</summary><p>All sales of these downloadable digital products are final, except where a refund or another remedy is required by applicable law. Please review the <a href="https://bluewhite505.github.io/lila-vey/terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> before purchasing.</p></details>
+    <details><summary>Can I request a refund?</summary><p>All sales are final as a store policy, subject to consumer rights that cannot legally be waived. For example, digital content withdrawal rules depend on your location and whether valid consent to immediate supply and acknowledgement of lost withdrawal rights were collected. See our <a href="terms.html">Terms &amp; Conditions</a>.</p></details>
     <details><summary>Does this include personal coaching?</summary><p>No. This is self-paced digital training with an optional editable-template library. It does not include personal coaching or ongoing one-on-one support.</p></details>
   </div>
 </section>
-</main><footer class="footer"><div class="wrap"><p>© <span id="year">2026</span> pinprofitgirl · Educational digital products · Results depend on your niche, offer, effort and execution.</p><nav aria-label="Legal policies"><a href="https://bluewhite505.github.io/lila-vey/terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a><span aria-hidden="true"> · </span><a href="https://bluewhite505.github.io/lila-vey/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a><span aria-hidden="true"> · </span><a href="#checkout">Choose your package</a></nav></div></footer>
+</main><footer class="footer"><div class="wrap"><p>© <span id="year">2026</span> pinprofitgirl · Educational digital products · Results depend on your niche, offer, effort and execution.</p><nav aria-label="Legal policies"><a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a><span aria-hidden="true"> · </span><a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a><span aria-hidden="true"> · </span><a href="#checkout">Choose your package</a><span aria-hidden="true"> · </span><a href="mailto:fociva.tech@gmail.com">Contact</a></nav></div></footer>
 <script src="config.js"></script>
 <script>
-/*
-  PRE-PUBLISH CHECKLIST
-  1. Verify the Stripe links in config.js match your actual payment links.
-  2. Test the end-to-end purchase and download flow before accepting orders.
-  3. Check that the external Terms and Privacy pages cover these products.
-  Note: This file does not process payments itself.
-*/
-const STRIPE_COURSE_7 = window.CANVA_CONFIG?.stripeCourse7 || '';
-const STRIPE_BUNDLE_19 = window.CANVA_CONFIG?.stripeBundle19 || '';
-
-const plans = [...document.querySelectorAll('input[name="package"]')];
+// Public Stripe payment-link URLs are safe to show in page source; secret API keys are not.
+// The fallback URLs avoid a broken checkout if config.js fails to load.
+const LINKS = {
+  course: window.CANVA_CONFIG?.stripeCourse7 || "https://buy.stripe.com/9B6bJ06lq5a11Q4dKXdwc03",
+  bundle: window.CANVA_CONFIG?.stripeBundle19 || "https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04"
+};
+const radios = Array.from(document.querySelectorAll('input[name="package"]'));
 const total = document.getElementById('total');
 const buy = document.getElementById('buy');
-const warning = document.getElementById('setup-warning');
 const explainer = document.getElementById('selection-explainer');
-
-function validPaymentLink(raw) {
-  if (!raw) return false;
-  try {
-    const url = new URL(raw);
-    return url.protocol === 'https:' && (
-      url.hostname === 'buy.stripe.com' ||
-      url.hostname === 'checkout.stripe.com' ||
-      url.hostname.endsWith('.stripe.com')
-    );
-  } catch (_) { return false; }
-}
-function chosenPackage() {
-  return document.querySelector('input[name="package"]:checked')?.value || 'bundle';
-}
 function refreshCheckout() {
-  const bundle = chosenPackage() === 'bundle';
-  const url = bundle ? STRIPE_BUNDLE_19 : STRIPE_COURSE_7;
-  const isReady = validPaymentLink(url);
+  const bundle = document.querySelector('input[name="package"]:checked')?.value !== 'course';
   total.textContent = bundle ? '$19' : '$7';
-  buy.textContent = bundle ? 'Get the Ready-Made Bundle — $19 →' : 'Get the Canva Course — $7 →';
-  buy.setAttribute('aria-label', bundle ? 'Pay nineteen dollars for course and vault' : 'Pay seven dollars for course only');
-  buy.disabled = !isReady;
+  buy.textContent = bundle ? 'Get My $19 Starter Bundle →' : 'Get the Canva Course — $7 →';
+  buy.href = bundle ? LINKS.bundle : LINKS.course;
   buy.classList.toggle('bundle-buy', bundle);
+  buy.setAttribute('aria-label', bundle ? 'Continue to Stripe: $19 bundle' : 'Continue to Stripe: $7 course');
   explainer.textContent = bundle
-    ? 'Selected: Canva training + ready-made product designs (7,500 editable pages).'
-    : 'Selected: Canva training only. Ready-made product designs are not included.';
-  warning.hidden = isReady;
-  warning.textContent = 'Preview mode: the ' +
-    (bundle ? '$19 bundle' : '$7 course') +
-    ' Stripe checkout link is not configured. Add the payment link before publishing.';
+    ? 'Includes the Canva training and ready-made product designs (7,500 editable pages).'
+    : 'Canva beginner course only. Ready-made product designs are not included.';
   document.querySelectorAll('.plan').forEach(el => {
     const radio = el.querySelector('input[type="radio"]');
     el.classList.toggle('is-selected', Boolean(radio?.checked));
   });
 }
-plans.forEach(radio => radio.addEventListener('change', refreshCheckout));
-buy.addEventListener('click', () => {
-  const url = chosenPackage() === 'bundle' ? STRIPE_BUNDLE_19 : STRIPE_COURSE_7;
-  if (validPaymentLink(url)) window.location.assign(url);
-});
-refreshCheckout();
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-<script>
-document.querySelectorAll('[data-select-course="true"]').forEach(function(link){
-  link.addEventListener('click',function(){
-    var course = document.getElementById('plan-course');
+radios.forEach(radio => radio.addEventListener('change', refreshCheckout));
+document.querySelectorAll('[data-select-course="true"]').forEach(link => {
+  link.addEventListener('click', () => {
+    const course = document.getElementById('plan-course');
     if (course && !course.checked) {
       course.checked = true;
-      course.dispatchEvent(new Event('change', {bubbles: true}));
+      course.dispatchEvent(new Event('change', { bubbles: true }));
     }
   });
 });
+refreshCheckout();
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body></html>
