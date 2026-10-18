@@ -300,6 +300,18 @@ pintrk('page');
 .story-contact a{color:var(--pinkdark);font-weight:800}
 .story-cta{margin-top:10px}
 @media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:24px}.story-photo{max-width:240px;margin:0 auto}.story-text p{font-size:16px}.story-text .story-last{font-size:18px}.story-cta{width:100%;font-size:15px;text-align:center}}
+
+/* v5: buyer quotes */
+.reviews{background:#fff;border-top:1px solid var(--line)}
+.reviews h2{margin-bottom:28px}
+.review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;max-width:900px;margin:0 auto}
+.review{margin:0;background:var(--cream);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.review blockquote{margin:0}
+.review blockquote p{margin:0;font-size:17px;line-height:1.6;color:#3f3340}
+.review blockquote p:before{content:'“'}.review blockquote p:after{content:'”'}
+.review figcaption{font-size:13px;font-weight:800;color:var(--violet)}
+.reviews-cta{margin-top:30px}
+@media(max-width:760px){.review-grid{grid-template-columns:1fr;gap:14px}.review{padding:18px}.review blockquote p{font-size:16px}.reviews-cta .cta{width:100%;font-size:15px}}
 </style>
 </head>
 <body>
@@ -450,8 +462,19 @@ pintrk('page');
       <p class="story-last"><strong>Sometimes, all you need is a place to start.</strong></p>
       <p class="story-sign">— Lila</p>
       <p class="story-contact">Questions? <a href="mailto:fociva.tech@gmail.com">Email me</a>. I read every message.</p>
-      <a class="cta story-cta" href="#checkout">See the $19 Starter Bundle →</a>
     </div>
+  </div>
+</section>
+<section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">FROM REAL BUYERS</span><h2 id="reviews-title">What buyers are saying</h2></div>
+    <div class="review-grid">
+      <figure class="review"><blockquote><p>Honestly, I thought Canva would be harder to figure out. Having the templates there to practice with makes a difference.</p></blockquote><figcaption>— Verified buyer</figcaption></figure>
+      <figure class="review"><blockquote><p>I got this mainly for the planners, but there's actually quite a bit more to explore.</p></blockquote><figcaption>— Verified buyer</figcaption></figure>
+      <figure class="review"><blockquote><p>Still learning my way around Canva lol, but at least I'm not starting with a blank page anymore.</p></blockquote><figcaption>— Verified buyer</figcaption></figure>
+      <figure class="review"><blockquote><p>I wasn't sure about buying another digital bundle, but I like that this one includes lessons too.</p></blockquote><figcaption>— Verified buyer</figcaption></figure>
+    </div>
+    <div class="center reviews-cta"><a class="cta" href="#checkout">See the $19 Starter Bundle →</a></div>
   </div>
 </section>
 <section class="section price-section" id="checkout">
