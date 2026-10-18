@@ -245,6 +245,47 @@ pintrk('page');
  .peek-card figcaption b{font-size:14px}
  .course-feature-actions .cta-outline{font-size:15px}
 }
+
+/* v3: product-first hero with price, text-only vault gallery (no inner catalog pages shown) */
+.hero h1{font-size:clamp(40px,4.3vw,56px);line-height:1.06;max-width:640px}
+.hero-grid>.hero-price{grid-row:5;display:flex;align-items:baseline;gap:12px;margin:24px 0 18px}
+.hero-price strong{font-size:52px;line-height:1;font-weight:900;letter-spacing:-.04em;color:var(--ink)}
+.hero-price span{font-size:15px;font-weight:700;color:var(--muted)}
+.vault-gallery{background:#fff;border-top:1px solid var(--line)}
+.vg-head{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(26px,5vw,60px);align-items:center;max-width:1000px;margin:0 auto 46px}
+.vg-cover{margin:0}.vg-cover picture{display:block;line-height:0}
+.vg-cover img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #ead9e1;box-shadow:0 22px 50px #57274b26}
+.vg-intro h2{margin:10px 0 14px}
+.vg-lead{font-size:18px;color:#584a59;margin:0 0 24px;max-width:600px}
+.vg-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.vg-stats div{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:14px 12px;display:grid;gap:4px}
+.vg-stats strong{font-size:26px;line-height:1.05;font-weight:900;letter-spacing:-.03em;color:var(--violet)}
+.vg-stats span{font-size:13px;line-height:1.3;color:var(--muted);font-weight:650}
+.vg-subhead{text-align:center;font-size:20px;margin:0 0 20px;letter-spacing:-.02em}
+.vcats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vcat{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px}
+.vcat h3{margin:0 0 12px;font-size:18px;line-height:1.25;color:var(--pinkdark)}
+.vcat ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px}
+.vcat li{background:#fff;border:1px solid #e6d6e2;border-radius:100px;padding:5px 11px;font-size:13px;line-height:1.35;color:#4e414b;font-weight:600}
+.vextras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.vextra{background:#f4effb;border:1px solid #ddd0ee;border-radius:18px;padding:18px 20px;display:grid;gap:6px}
+.vextra b{font-size:17px;color:var(--violet)}
+.vextra span{font-size:14px;color:#5e5068;line-height:1.5}
+.vg-note{text-align:center;font-size:13px;color:var(--muted);max-width:720px;margin:26px auto 22px}
+@media(max-width:900px){.vcats,.vextras{grid-template-columns:repeat(2,minmax(0,1fr))}.vg-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .hero-price{margin:18px 0 0!important;justify-content:center}
+ .hero-price strong{font-size:44px}
+ .hero-grid>.hero-cta{font-size:15px;letter-spacing:-.01em;padding:16px 10px;white-space:nowrap}
+ .vg-head{grid-template-columns:1fr;margin-bottom:34px}
+ .vg-cover{max-width:230px;margin:0 auto}
+ .vg-intro{text-align:center}
+ .vg-lead{font-size:16px}
+ .vcats,.vextras{grid-template-columns:1fr}
+ .vcat{padding:17px 15px}
+ .vcat li{font-size:12.5px}
+ .vg-cta{width:100%;font-size:15px;padding:16px 12px;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -252,8 +293,8 @@ pintrk('page');
 <main>
 <section class="hero">
   <div class="wrap hero-grid">
-    <span class="eyebrow hero-eyebrow">CANVA COURSE + 7,500 READY-MADE PAGES · $19</span>
-    <h1>Your first digital product, <em>without starting from a blank page.</em></h1>
+    <span class="eyebrow hero-eyebrow">YOUR DIGITAL PRODUCT SHORTCUT</span>
+    <h1>Don't Start From Scratch. <em>Start With Ready-Made Digital Products.</em></h1>
     <figure class="authentic-mockup bundle-original hero-media">
       <a href="#checkout" aria-label="See purchase options">
         <picture>
@@ -264,37 +305,55 @@ pintrk('page');
         </picture>
       </a>
     </figure>
-    <p class="lead">Learn Canva in about 25 minutes, then customize ready-made planners, journals and trackers for your shop.</p>
-    <ul class="ticks">
-      <li>7,500 editable pages in a clickable catalog of Canva links</li>
-      <li>Lessons cover editing, arranging, locking and downloading</li>
-      <li>Rebrand the designs and sell them under your own shop name</li>
-    </ul>
-    <a class="cta hero-cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get My $19 Starter Bundle →</a>
-    <div class="fine">One-time $19 · Instant download · Resell rights included</div>
+    <p class="lead">Get beginner-friendly Canva training plus editable planners, journals, trackers and more — so you can customize your own products and prepare them for your shop faster.</p>
+    <div class="hero-price" aria-label="Price: $19, one-time payment"><strong>$19</strong><span>One-time payment</span></div>
+    <a class="cta hero-cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get My Digital Product Starter Bundle →</a>
+    <div class="fine">Canva course + 7,500 editable pages · Instant download · Full MRR/PLR rights</div>
   </div>
 </section>
-<section class="section vault-spotlight" id="vault" aria-labelledby="gallery-title">
-  <div class="wrap vault-spotlight-grid">
-    <div class="vault-story">
-      <span class="eyebrow">THE READY-MADE DIGITAL PRODUCT VAULT</span>
-      <h2 id="gallery-title"><span class="vault-big-number">7,500</span> editable Canva pages. <em>So much less to create from zero.</em></h2>
-      <p class="vault-lead">Instead of facing a blank canvas, start with ready-made product designs for planners, journals, trackers and other popular niches. Choose one, customize it and prepare it for your shop.</p>
-      <p class="vault-proven">A FEW OF THE PRODUCTS INSIDE</p>
-      <ul class="vault-product-list">
-        <li>Self Care Planner</li><li>Etsy Shop Planner</li><li>Budget Planner</li>
-        <li>Fitness Planner</li><li>Social Media Post Planner</li><li>Garden Planner</li>
-      </ul>
-      <div class="vault-clarity">That's 7,500 editable pages across dozens of ready-made planners, journals and trackers, with Full MRR/PLR rights so you can rebrand and resell them (see the license in your catalog).</div>
-      <a class="cta vault-cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get the Course + Product Vault — $19 →</a>
+<section class="section vault-gallery" id="vault" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="vg-head">
+      <figure class="vg-cover">
+        <picture>
+          <source srcset="assets/peek-cover.webp" type="image/webp">
+          <img loading="lazy" decoding="async" src="assets/peek-cover.jpg" width="520" height="735" alt="Cover of The Ready-Made Product Vault PDF: 7500 Done for you planners, journals and tracker pages with MRR/PLR">
+        </picture>
+      </figure>
+      <div class="vg-intro">
+        <span class="eyebrow">WHAT'S INSIDE THE VAULT</span>
+        <h2 id="gallery-title">7,500 editable Canva pages, already designed for you.</h2>
+        <p class="vg-lead">The layouts are done. Pick a product, open it in Canva, and change the text, colors, images and details to make it yours. That's design work you don't have to start from a blank page.</p>
+        <div class="vg-stats">
+          <div><strong>7,500</strong><span>editable Canva pages</span></div>
+          <div><strong>50</strong><span>one-page templates</span></div>
+          <div><strong>80+</strong><span>bonus freebies</span></div>
+          <div><strong>MRR/PLR</strong><span>full resell rights</span></div>
+        </div>
+      </div>
     </div>
-    <figure class="vault-showcase">
-      <picture>
-        <source srcset="assets/peek-cover.webp" type="image/webp">
-        <img loading="lazy" decoding="async" src="assets/peek-cover.jpg" width="520" height="735" alt="Cover of The Ready-Made Product Vault PDF: 7500 Done for you planners, journals and tracker pages with MRR/PLR">
-      </picture>
-      <figcaption>The vault PDF: a clickable catalog that opens each ready-made design in Canva.</figcaption>
-    </figure>
+    <h3 class="vg-subhead">Product categories and a few of the products inside</h3>
+    <div class="vcats">
+        <article class="vcat"><h3>Personal Development</h3><ul><li>Self Care Planner</li><li>Life Planner</li><li>Self Love Planner</li><li>Personal Growth Planner</li><li>Goal Planner</li><li>Mood Trackers</li><li>Brain Dump Bundle</li><li>Reading Planner</li></ul></article>
+        <article class="vcat"><h3>Business</h3><ul><li>Small Business Planner</li><li>Digital Product Planner</li><li>Online Shop Planner</li><li>Shopify Planner</li><li>Product Launch Planner</li><li>Craft Business Planner</li><li>Order Forms Bundle</li></ul></article>
+        <article class="vcat"><h3>Manifestation &amp; Faith</h3><ul><li>Manifestation Journal</li><li>Abundance Mindset Journal</li><li>Vision Book Journal</li><li>Prayer Journal</li><li>Devotional Planner</li><li>120 Gratitude Journal Prompts</li><li>1,000 Positive Affirmations for Women</li></ul></article>
+        <article class="vcat"><h3>Finance</h3><ul><li>Budget Planner</li><li>Debt Trackers</li><li>Savings Trackers</li><li>Credit Trackers</li><li>Monthly Savings Challenge</li><li>Financial Planner Journal</li></ul></article>
+        <article class="vcat"><h3>Social Media</h3><ul><li>Social Media Post Planner</li><li>Monthly Social Media Post Planner</li><li>Social Media Marketing Bundle</li><li>Post planners for Instagram, Facebook, LinkedIn &amp; X</li></ul></article>
+        <article class="vcat"><h3>Health &amp; Wellness</h3><ul><li>Health &amp; Wellness Planner</li><li>Fitness Planner</li><li>Meal Planner</li><li>Recipe Cards Bundle</li><li>Yoga Logbook</li><li>Keto Diet Planner</li><li>7-Day Food Diary</li></ul></article>
+        <article class="vcat"><h3>Mental Health</h3><ul><li>ADHD Planner</li><li>Anxiety Journal</li><li>Mental Health Planner</li><li>Stress Processing Journal</li><li>100 Self-Reflective Prompts</li></ul></article>
+        <article class="vcat"><h3>Home &amp; Property</h3><ul><li>Household Planner</li><li>Home Buying Planner</li><li>Moving Planner</li><li>Garden Planner</li><li>Cleaning Planner</li><li>Home Renovation Planner</li><li>Pet Care Planner</li></ul></article>
+        <article class="vcat"><h3>Pregnancy &amp; Baby</h3><ul><li>My Pregnancy Journal</li><li>Baby Memory Book</li><li>Newborn Planner</li></ul></article>
+        <article class="vcat"><h3>School</h3><ul><li>Back to School Planner</li><li>Student Planner</li><li>College Student Planner</li><li>Homeschool Planner</li><li>Teacher Planner</li><li>Summer Planner for Kids</li></ul></article>
+        <article class="vcat"><h3>2025 &amp; 2026 Planners</h3><ul><li>365-Day 2026 Planner</li><li>2026 Budget Planner</li><li>2026 Wedding Planner</li><li>2026 Travel Planner</li><li>2026 Business Planner</li><li>2026 Self Care Journal</li></ul></article>
+        <article class="vcat"><h3>Travel, Events &amp; More</h3><ul><li>Travel Planner</li><li>Event Planner</li><li>Bullet Journal</li><li>To-Do List Bundle</li><li>Work From Home Planner</li><li>Tarot Bundle</li><li>115 Mixed Canva Templates</li></ul></article>
+    </div>
+    <div class="vextras">
+        <div class="vextra"><b>50 one-page templates</b><span>Habit Tracker, Bill Tracker, Grocery List, Weekly Planner, Password Tracker, Monthly Calendar and more</span></div>
+        <div class="vextra"><b>80+ freebies</b><span>Workout Planner, Recipe Journal, Mileage Tracker Logbook, Sales Tracker, 52-Week Saving Tracker, Mom's Planner and more</span></div>
+        <div class="vextra"><b>Mockups &amp; marketing extras</b><span>128 digital product mockup listing templates, the Faceless Digital Marketing Bundle and luxury travel Reels packs</span></div>
+    </div>
+    <p class="vg-note">The vault is a PDF catalog of Canva links. 7,500 counts editable pages, not separate products. Full MRR &amp; PLR terms are on the license page in your catalog.</p>
+    <div class="center"><a class="cta vg-cta" href="https://buy.stripe.com/5kQ00iaBG45X66k8qDdwc04" rel="noopener noreferrer">Get the Course + Product Vault — $19 →</a></div>
   </div>
 </section>
 
