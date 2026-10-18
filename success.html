@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Your Downloads | Canva Made Simple</title>
+<style>
+:root{--ink:#26202b;--pink:#b92962;--cream:#fff9f5;--violet:#382151;--line:#eadfe7}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 5%,#fce4ee,transparent 45%),var(--cream);font:16px/1.6 Inter,system-ui,Arial,sans-serif;color:var(--ink)}
+header{max-width:850px;margin:auto;padding:25px 20px;font-weight:900}header span{color:var(--pink)}main{max-width:650px;margin:6vh auto 50px;padding:0 20px}.panel{padding:clamp(22px,5vw,43px);background:white;border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 60px #38215113}
+.eyebrow{text-transform:uppercase;font-size:12px;letter-spacing:.14em;color:var(--pink);font-weight:900}h1{font-size:clamp(31px,5vw,43px);line-height:1.13;letter-spacing:-.04em;margin:12px 0}p{color:#695d68}.downloads{display:grid;gap:12px;margin-top:22px}.download{display:block;padding:18px 21px;border-radius:13px;color:#fff;background:var(--violet);font-weight:800;text-decoration:none}.download:hover{background:#563275}.refresh{font:inherit;font-weight:800;color:var(--pink);border:1px solid #d9a6bd;background:white;border-radius:12px;padding:11px 16px;cursor:pointer}.subtle{font-size:13px}.error{color:#942642}a{color:var(--pink)}
+</style>
+<script src="config.js"></script>
+</head>
+<body>
+<header>pin<span>profit</span>girl 📌</header>
+<main><div class="panel">
+<div class="eyebrow">Canva Made Simple</div>
+<h1>Your purchase is confirmed 🎉</h1>
+<p id="status" role="status" aria-live="polite">Checking your payment and preparing your downloads...</p>
+<div id="downloads" class="downloads"></div>
+<p class="subtle" id="help"></p>
+<button class="refresh" id="refresh" type="button" hidden>Refresh download links</button>
+</div></main>
+<script>
+(() => {
+  const status = document.getElementById('status');
+  const list = document.getElementById('downloads');
+  const help = document.getElementById('help');
+  const refresh = document.getElementById('refresh');
+  const session = new URLSearchParams(location.search).get('session_id');
+  const worker = String(window.CANVA_CONFIG?.workerBaseUrl || '').replace(/\/$/, '');
+
+  if (!session || !session.startsWith('cs_')) {
+    status.textContent = 'Your payment session ID is missing. Please use the link from your Stripe checkout confirmation.';
+    status.className = 'error'; return;
+  }
+  if (!/^https:\/\/[^/]+$/.test(worker)) {
+    status.textContent = 'Download delivery is not configured yet. Please contact the seller.';
+    status.className = 'error'; return;
+  }
+  async function load() {
+    status.textContent = 'Checking your payment and preparing your downloads...';
+    status.className = '';
+    list.replaceChildren();
+    help.textContent = '';
+    refresh.hidden = true;
+    try {
+      const response = await fetch(`${worker}/verify?session_id=${encodeURIComponent(session)}`, { cache: 'no-store' });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Could not check the payment.');
+      if (data.status !== 'paid') {
+        status.textContent = 'Your payment is still being processed. Please wait a moment and try again.';
+        refresh.hidden = false; return;
+      }
+      status.textContent = 'Your files are ready. Choose a download below:';
+      for (const file of data.downloads || []) {
+        const link = document.createElement('a');
+        link.href = file.url;
+        link.className = 'download';
+        link.textContent = file.label + ' ↓';
+        list.append(link);
+      }
+      help.textContent = 'For security, download links expire after 15 minutes. Keep this page and press Refresh download links whenever needed.';
+      refresh.hidden = false;
+    } catch (e) {
+      status.textContent = e.message || 'Unable to prepare downloads right now.';
+      status.className = 'error';
+      refresh.hidden = false;
+    }
+  }
+  refresh.addEventListener('click', load);
+  load();
+})();
+</script>
+</body>
+</html>
