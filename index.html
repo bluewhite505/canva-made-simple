@@ -128,6 +128,23 @@
  .vault-full-image{margin-top:18px}
  .bundle-original img,.vault-full-image img{border-radius:12px}
 }
+
+/* Separate, large Canva course presentation using its ORIGINAL cover. */
+.course-feature-section{background:linear-gradient(125deg,#fffaf8,#fff4f6 52%,#fff9f5)}
+.course-section-head{margin-bottom:30px}
+.course-feature-grid{max-width:1030px;display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:center;gap:clamp(26px,5vw,70px);margin:0 auto}
+.course-feature-cover{margin:0}
+.course-feature-cover a{display:block;max-width:400px;margin:0 auto;line-height:0}
+.course-feature-cover img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 24px 54px #6a3b502a}
+.course-feature-tag{display:inline-block;letter-spacing:.11em;font-size:12px;font-weight:900;color:var(--pinkdark)}
+.course-feature-info h3{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,3.9vw,48px);line-height:1.14;letter-spacing:-.036em;margin:12px 0 15px}
+.course-feature-info p{color:#594d58;font-size:18px;line-height:1.7;margin:0 0 18px}
+.course-feature-list{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:12px}
+.course-feature-list li{font-size:16px;color:#4e414b;display:flex;gap:10px;align-items:flex-start}
+.course-feature-list li::before{content:'✓';flex:none;color:#188351;background:#e4f3ea;font-weight:900;border-radius:100%;padding:0 6px}
+.course-feature-actions{display:grid;gap:12px;justify-items:start}
+.course-feature-small{font-size:13px;color:#796676;max-width:430px}
+@media(max-width:760px){.course-feature-grid{grid-template-columns:1fr;gap:25px}.course-feature-cover a{max-width:350px}.course-feature-info h3{font-size:34px}.course-feature-info p{font-size:16px}.course-feature-actions{justify-items:stretch}.course-feature-actions .cta{font-size:15px;text-align:center}}
 </style>
 </head>
 <body>
@@ -172,6 +189,37 @@
     </div>
   </div>
 </section>
+<section class="section course-feature-section" id="course" aria-labelledby="course-feature-heading">
+  <div class="wrap">
+    <div class="center course-section-head">
+      <span class="eyebrow">CANVA MADE SIMPLE · BEGINNER CRASH COURSE</span>
+      <h2 id="course-feature-heading">Meet the <em class="pink-em">$7 Canva course.</em></h2>
+      <p class="sub">Learn the essential tools in an approximately 25-minute beginner-friendly video. Available on its own for $7 or included in the $19 bundle.</p>
+    </div>
+    <div class="course-feature-grid">
+      <figure class="course-feature-cover">
+        <a href="assets/course-cover.webp" target="_blank" rel="noopener" aria-label="View the original Canva Made Simple course cover in full size">
+          <img src="assets/course-cover.webp" alt="Original Canva Made Simple Beginner Crash Course cover with rose-gold laptop and blush graphics" loading="lazy" width="750" height="937">
+        </a>
+      </figure>
+      <div class="course-feature-info">
+        <span class="course-feature-tag">YOUR FIRST STEP IN CANVA</span>
+        <h3>Learn the basics. Create with confidence.</h3>
+        <p>Get a clear walkthrough of Canva’s beginner essentials. Follow the lessons at your own pace, then use those skills to personalize your own designs.</p>
+        <ul class="course-feature-list">
+          <li>Templates, photo frames and core editing</li>
+          <li>Spacing, effects, transparency and animations</li>
+          <li>Arranging, locking and editing elements</li>
+          <li>Saving, downloading and sharing your creations</li>
+        </ul>
+        <div class="course-feature-actions">
+          <a class="cta" href="#checkout" data-select-course="true">Get Canva Made Simple — $7 →</a>
+          <span class="course-feature-small">Or choose the $19 bundle to get the course + ready-made product library.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section alt products-gallery" id="vault" aria-labelledby="gallery-title">
   <div class="wrap">
     <div class="center">
@@ -199,24 +247,7 @@
     </div>
   </div>
 </section>
-<section class="section">
-  <div class="wrap what">
-    <div>
-      <span class="eyebrow">INSIDE THE $7 COURSE</span>
-      <h2>All the beginner essentials. No 10-hour learning curve.</h2>
-      <p class="sub" style="margin:0 0 18px">A straightforward, approximately 25-minute self-paced video walkthrough to help you start editing and personalizing designs with confidence.</p>
-      <div class="note">The training focuses on Canva basics — not building a complete digital product business. You can replay it at your own pace.</div>
-    </div>
-    <ul class="checklist">
-      <li>Getting started with a Canva design</li>
-      <li>Templates, photo frames and core editing</li>
-      <li>Spacing, effects, transparency and animations</li>
-      <li>Arranging and locking elements</li>
-      <li>Saving, downloading and sharing your designs</li>
-      <li>Additional guidance about digital product workflows</li>
-    </ul>
-  </div>
-</section>
+
 <section class="section alt" aria-labelledby="bundle-heading">
   <div class="wrap">
     <div class="center">
@@ -366,4 +397,15 @@ refreshCheckout();
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<script>
+document.querySelectorAll('[data-select-course="true"]').forEach(function(link){
+  link.addEventListener('click',function(){
+    var course = document.getElementById('plan-course');
+    if (course && !course.checked) {
+      course.checked = true;
+      course.dispatchEvent(new Event('change', {bubbles: true}));
+    }
+  });
+});
+</script>
 </body></html>
